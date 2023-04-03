@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/style.css">
+    <title>Умный дом - мобильное приложение</title>
+</head>
+ <body><!--.mobile>.mobile__top+.mobile__content+.mobilebottom -->
+    <div class="mobile">
+        <div class="mobile__top">
+            <img src="img/top.svg" alt="">
+        </div>
+        <div class="mobile__content">
+            <div id="selectbox" class="selectbox">
+                <div class="selectbox__selected">
+                    <span>AllRooms</span>
+                    <img class="i_arrow" src="fonts/icons/angle-arrow-down_icon-icons.com_73683.png" alt="">   
+                </div>
+                <div class="selectbox__list">
+                    <div data-room="all" class="selectbox__item selected">All Rooms</div>
+                    <div data-room="LivingRoom"  data-room=""class="selectbox__item">Living Room</div>
+                    <div data-room="Bedroom" class="selectbox__item">Bedroom</div>
+                    <div data-room="Kitchen" class="selectbox__item">Kitchen</div>
+                    <div data-room="Bathroom" class="selectbox__item">Bathroom</div>
+                    <div data-room="Studio" class="selectbox__item">Studio</div>
+                    <div data-room="WashingRoom" class="selectbox__item">Washing Room</div>
+                </div>
+            </div>
+            <div id="rooms" class="rooms">
+                <div data-room="LivingRoom" class="room">
+                    <img src="fonts/icons/Sofa_5519.png" height="95px" width="135px"><span>Living Room</span>
+                </div>
+                <div data-room="Bedroom" class="room">
+                    <img src="fonts/icons/bed_bed_room_sleep_furniture_icon_124423.png" height="95px"><span>Bedroom</span>
+                </div>
+                <div data-room="Kitchen" class="room">
+                    <img src="fonts/icons/refrigerator_icon_124400.png" height="95px"><span>Kitchen</span>
+                </div>
+                <div data-room="Bathroom" class="room">
+                    <img src="fonts/icons/bathroom_icon_144508.png" height="95px" width="95px"><span>Bathroom</span>
+                </div>
+                <div data-room="Studio" class="room">
+                    <img src="fonts/icons/desk_workspace_studio_furniture_table_office_computer_icon_124434.png" height="95px"><span>Studio</span>
+                </div>
+                <div data-room="WashingRoom" class="room">
+                    <img src="fonts/icons/976610-appliances-clothes-washer-laundry-washer-washing-machine_106560.png" height="95px" width="110px"><span>Washing Room</span>
+                </div>
+            </div> 
+            <div id="settings" class="settings">
+                <div class="settings__tabs">
+                    <div data-type="Temperature" class="option">
+                        <img class="option__img" src="fonts/icons/temperature.svg" height="48px" width="48px"alt="">
+                        <span class="option__span">Temperature</span>
+                    </div>
+                    <div data-type="Lights" class="option">
+                        <img class="option__img" src="fonts/icons/lights.svg" height="48px" width="48px"alt="">
+                        <span class="option__span">Lights</span>
+                    </div>
+                    <div data-type="Humidity" class="option">
+                        <img class="option__img" src="fonts/icons/humidity.svg" height="48px" width="48px"alt="">
+                        <span class="option__span">Humidity</span>
+                    </div>
+                </div>
+                <div class="setting__screens">
+                    <div data-type="Temperature" class="first_settings__screen">
+                        <div class="settings__screen-title">Temperature</div>
+                        <div class="Temperature-button">
+                            <svg class="dots-box" viewBox="0 0 103 103">  <!--size circle-->
+                                <circle class="dots" r="50" cx="50%" cy="50%"></circle>
+                                <circle class="line" r="44" cx="50%" cy="50%"></circle>
+                                <circle id="line-active" class="line-active" r="44" cx="50%" cy="50%"></circle>
+                                <circle class="separate-dots" r="50" cx="50%" cy="50%"></circle>
+                                <circle class="separate-line" r="44" cx="50%" cy="50%"></circle>
+                                <circle id="round" class="round" r="44" cx="50%" cy="50%"></circle>
+                            </svg>
+                            <div class="Temperature-button__info">
+                                <span class="first_span">16</span>
+                                <span class="second_span">°C</span>
+                            </div>
+                        </div>
+                        <div class="power">
+                            <img src="/src/fonts/icons/power.svg" alt="">
+                        </div>
+                        <div class="info_about_power">Click to turn off</div>
+                        <div class="set_temperature-button">Set Temperature</div>
+                        </div>
+                    <div data-type="Lights" class="second_settings__screen">
+                        <div class="second_settings__screen-title">Intensity</div>
+                        <div class="second_settings__screen-icon">
+                            <img src="fonts/icons/sun.svg" height="32px" width="32px" alt="">
+                        </div>
+                        <div class="slider">
+                            <div class="slider__info">
+                                <span class="slider__info_first">50</span>
+                                <span class="slider__info_second">%</span>
+                            </div>
+                        </div>
+                        <div data-type="Lights" class="switch">
+                            <div data-type="Lights" class="switch__round"></div>
+                        </div>
+                    </div>
+                    <div data-type="Humidity" class="third_settings__screen">
+                        <div class="second_settings__screen-title">Intensity</div>
+                        <div class="second_settings__screen-icon">
+                            <img src="fonts/icons/humidity.svg" height="32px" width="32px" alt="">
+                        </div>
+                        <div class="slider">
+                            <div class="slider__info">
+                                <span class="slider__info_first">50</span>
+                                <span class="slider__info_second">%</span>
+                            </div>
+                        </div>
+                        <div data-type="Humidity" class="switch">
+                            <div data-type="Humidity" class="switch__round"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mobile__bottom">
+            <img src="img/bottom.svg" alt="">
+        </div>
+    </div>
+    
+    <script src="/src/js/index.js"></script>
+
+</body>
+</html>
+

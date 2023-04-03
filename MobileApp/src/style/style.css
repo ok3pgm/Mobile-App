@@ -1,0 +1,394 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Rubik:wght@300;400;600&display=swap');
+@import url('/src/fonts/icons/style.css');
+:root {
+    --color_bg: #e0e5eb;
+    --gradient: linear-gradient(to right, #a994e6, #7e78ee);
+    --grey: #f0f0f0;
+    --light: white;
+    --transition: all 0.3s ease-in-out;
+}
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    font-family: 'Montserrat', sans-serif;
+    font-family: 'Rubik', sans-serif;
+    background-color: var(--color_bg);
+}
+h1 {
+    color: black;
+}
+.mobile {
+    border-radius: 20px;
+    width: 350px;
+    height: 650px;
+    background-color: var(--light);
+    box-shadow: -5px 5px 10px rgb(0,0,0,0.4);
+    display: grid;
+    grid-template-rows: 48px 1fr 62px;
+}
+
+.mobile__bottom,.mobile__top {
+    justify-self: center;
+    align-self: center;
+}
+
+/* .mobile__content{
+} */
+
+.rooms {
+    display: grid;
+    grid-template-columns: repeat(2, 150px);
+    justify-content: center;
+    align-items: center;
+    grid-gap: 14px;
+}
+.room {
+    cursor: pointer;
+    display: grid;
+    grid-template-rows: 110px 30px;
+    font-size: 16px;
+    text-align: center;
+    justify-items: center;
+    background-color: var(--grey);
+    border-radius: 12px;
+    width: 147px;
+    height: 150px;
+}
+
+.room.selected{
+    opacity: 1;
+    background:var(--gradient);
+    color: white;
+}
+.room.selected img {
+    filter: invert(1); /*invert color img*/
+}
+.room img {
+    margin-top: 5px;
+    display: grid;
+    text-align: center;
+    opacity: 0.76;
+}
+
+/* UI --Components */
+.selectbox {
+    cursor: pointer;
+    margin: 0 auto;
+    width: max-content;
+    position: relative;
+    margin-bottom: 30px;
+}
+.selectbox.open .selectbox__list{
+    top: 20px;
+    max-height: none;
+}
+.selectbox.open .i_arrow {
+    transform: rotate(-180deg);
+}
+.selectbox__selected {
+    font-size: 18px;
+    font-weight: 600; 
+    position: relative;
+    z-index: 2;
+    background-color: #fff;
+}
+.i_arrow {
+    display: inline-block;
+    width: 13px;
+    height: 13px;
+    margin-left: 10px;
+    transition: var(--transition);
+    transform: rotate(0deg);
+}
+.selectbox__list {
+    position: absolute;
+    z-index: 1;
+    overflow: hidden;
+    max-height: 0;
+    top: 0;
+    left: -8px;
+    right: -8px;
+    background-color: #fff;
+    padding: 8px 0px 4px 0px ;
+    border-radius: 3px;
+    transition: all 0.3s ease-in-out;
+}
+.selectbox__item {
+    cursor: pointer;
+}
+/* Slider */
+.slider {
+    cursor: pointer;;
+    background: var(--grey);
+    width: 100px;
+    height: 250px;
+    border-radius: 18px;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+}
+.slider__info{
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--gradient);
+    color: white;
+    font-size: 19px;
+    min-height: 30px;
+    height: 50%;
+    transition: all 0.2s ease-in-out;
+}
+.slider__info span {
+    margin: 0;
+}
+/*Switch*/
+.switch {
+    background: var(--grey);
+    width: 50px;
+    height: 25px;
+    margin: 25px auto;
+    border-radius: 5px;
+    position: relative;
+} 
+.switch__round {
+    position: absolute;
+    left: 31px;
+    width: 25px;
+    height: 25px;
+    border-radius: 25px;
+    background: var(--gradient);
+    transition: all 0.5s ease-in-out;
+    box-shadow: 0 0 10px 0 #999999;
+}
+.switch__round.active { /*-6px  -  31px */
+    position: absolute;
+    left: -5px;
+    background: white;
+    box-shadow: 0 0 10px 0 #999999;
+}
+
+.selectbox__item.selected,
+.selectbox__item:hover{
+    color: #7e78ee;
+    font-weight: 600;
+}
+
+.selectbox__item:not(:last-child) {
+    margin-bottom: 4px;
+}
+
+.settings {
+    display: none;
+}
+.settings__tabs {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    justify-content: center;
+    grid-gap: 14px;
+}
+.option {
+    cursor: pointer;
+    display: grid;
+    grid-template-rows: 74px 21px;
+    text-align: center;
+    align-content: center;
+    align-items: center;
+    justify-items: center;
+    font-size: 16px;
+    background-color: var(--grey);
+    border-radius: 12px;
+    opacity: 0.85;
+}
+.option.selected {
+    background:var(--gradient);
+    color: white;
+    opacity: 1;
+}
+.option span {
+    margin-bottom: 10px;
+    font-size: 15px;
+}
+.option img { 
+    display: grid;
+    text-align: center;
+    justify-items: center;
+}
+.settings__screen-title {
+    font-weight: 400;
+    text-align: center;
+    margin-top: 19px;
+    margin-bottom: 13px;
+}
+.first_settings__screen.active {
+    display: block;
+}
+.first_settings__screen {
+    display: none;
+}
+.second_settings__screen.active {
+    display: block;
+}
+.second_settings__screen {
+    display: none;
+}
+.third_settings__screen.active {
+    display: block;
+}
+.third_settings__screen{
+    display: none;
+}
+
+/* Button regulation temperature */
+.dots-box {
+    position: absolute;
+}
+.Temperature-button {
+    cursor: pointer;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    width: 240px;
+    height: 240px;
+    margin: 0 auto;
+    position: relative;
+}
+.Temperature-button__info {
+    position: relative;
+    width: 70%;
+    height: 70%;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 1);
+    border-radius: 50%;
+    display: flex;
+    font-size: 36px;
+}
+.Temperature-button__info::before {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 3.5%;
+    right: 3.5%;
+    top: 3.5%;
+    bottom: 3.5%;
+    border-radius: 100%;
+    border: 1px solid black;
+    opacity: 0.3;
+}
+
+.dots,
+.line,
+.line-active,
+.round,
+.separate-dots,
+.separate-line {
+    fill: transparent;   /*ghost circle*/
+    stroke: var(--grey);
+    stroke-linecap: round; /*stroke=>dots*/
+    stroke-width: 3px;/*stroke-обводка*/
+    stroke-dasharray: 0 21;
+    transform-origin: center;
+    transform: rotate(354deg);
+    transition: all 0.5s ease-in-out;
+}
+.line,
+.line-active,
+.round {
+    stroke-width: 1.5px;
+    stroke-dasharray: 276 276;
+    transform: rotate(53deg);
+    transform-origin: center;
+}
+.line-active {
+    stroke: black;
+    stroke-dasharray: 67 276; /*62*/
+}
+.round {
+    stroke-dasharray: 0 276;
+    stroke-width: 6px;
+    transform: rotate(-221.5deg); /*41 - 138.5*/
+}
+.separate-dots,
+.separate-line{
+    stroke: white;
+}
+.separate-dots {
+    stroke-dasharray: 60 275;
+    transform: rotate(53deg);
+    transform-origin: center;
+}
+.separate-line {
+    stroke-dasharray: 66.09 275;
+    transform: rotate(46.45deg);
+    transform-origin: center;
+}
+.power {
+    cursor: pointer;
+    background: var(--gradient);
+    margin: 0 auto;
+    position: relative;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    display: grid;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 5px;
+    margin-top: -20px;
+}
+.power img {
+    filter: invert(1);
+    margin: 0 auto;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.info_about_power {
+    font-weight: 500;
+    font-size: 10px;
+    display: grid;
+    justify-items: center;
+    margin-bottom: 14px;
+}
+.set_temperature-button {
+    color: white;
+    background: var(--gradient);
+    width: 208px;
+    height: 35px;
+    border-radius: 50px;
+    font-weight: 500;
+    font-size: 14px;
+    display: grid;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    justify-items: center;
+    margin: 0 auto;
+}
+
+/* Regulate lights */
+.second_settings__screen-title {
+    display: grid;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 16px;
+}
+.second_settings__screen-icon {
+    display: grid;
+    justify-content: center;
+    opacity: 0.55;
+    margin-bottom: 13px;
+}
